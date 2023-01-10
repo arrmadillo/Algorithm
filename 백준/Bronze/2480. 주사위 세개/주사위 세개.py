@@ -1,20 +1,10 @@
-nums = list(map(int, input().split()))
-max_num = max(nums)
-cnt = {}
+a, b, c = map(int, input().split())
 
-for i in nums:
-    try:
-        cnt[i] += 1
-    except:
-        cnt[i] = 1
-
-if len(cnt) == 3:
-    print(max_num * 100)
-elif len(cnt) == 2:
-    
-    for k, v in cnt.items():
-        
-        if v == 2:
-            print(1000+k*100)
+if a == b == c:
+    print(10000 + (a * 1000))
+elif a == b or b == c:
+    print(1000 + (b * 100))
+elif a == c:
+    print(1000 + (a * 100))
 else:
-    print(10000+max_num*1000)
+    print(max(a, b, c) * 100)
