@@ -1,5 +1,4 @@
+#11720
 N = int(input())
-nums = input()
-nums = [int(i)for i in nums]
-
+nums = list(map(int, input()))
 print(sum(nums))
