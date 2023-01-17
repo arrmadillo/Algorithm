@@ -1,6 +1,6 @@
-import sys
-int_num = int(sys.stdin.readline())
-str_num = str(int_num)
+str_num = input()
+int_num = int(str_num)
+
 add = 0
 count = 0
 
