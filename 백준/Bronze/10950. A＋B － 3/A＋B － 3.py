@@ -1,5 +1,15 @@
-case = int(input())
+import sys
 
-for i in range(case):
-    a, b = map(int, input().split())
-    print(f'{a+b}')
+t = int(sys.stdin.readline())
+
+for i in range(t):
+    a, b = map(int, sys.stdin.readline().split())
+    print(a + b)
+
+
+    
+
+
+
+
+
