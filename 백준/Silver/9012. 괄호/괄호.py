@@ -21,5 +21,3 @@ for i in range(t):
                 break
         else:
             print('YES')
-            
-
