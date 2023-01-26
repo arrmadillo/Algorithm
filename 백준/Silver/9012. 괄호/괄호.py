@@ -1,23 +1,20 @@
 import sys
 
 t = int(sys.stdin.readline())
-a, b = 0, 0
+
 for i in range(t):
     vps = sys.stdin.readline().rstrip()
-    if len(vps) % 2 != 0:
-        print('NO')
-    elif vps.count('(') != vps.count(')'):
+    if len(vps) % 2 != 0 or vps.count('(') != vps.count(')'): # 총길이는 항상 짝수, 그리고 짝이 맞아야함
         print('NO')
     else:
+        stack = []
         for i in vps:
-            if a >= b:
-                if i == '(':
-                    a += 1
-                else:
-                    b += 1
+            if i == '(':
+                stack.append(i)
+            elif stack:
+                stack.pop()
             else:
                 print('NO')
-                a, b = 0, 0
                 break
         else:
             print('YES')
