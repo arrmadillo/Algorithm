@@ -12,14 +12,14 @@ for num in nums:
     if first == 0 and last == 0:
         first = num
         last = num
-    elif last >= num:
+    elif num > last:
+        last = num
+    elif num <= last:
         answer.append(last - first)
         first = num
         last = num
-    elif last < num:
-        last = num
-    
 else:
     answer.append(last - first)
+
 
 print(max(answer))
