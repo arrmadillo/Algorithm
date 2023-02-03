@@ -1,16 +1,13 @@
 import sys
 
 words = sys.stdin.readline().rstrip()
+
 answer = []
-
-for i in range(len(words)-2):
-    for j in range(i+1, len(words)-1):
-        for k in range(j+1, len(words)):
-            a = words[:j]
-            b = words[j:k]
-            c = words[k:]
-            answer.append(a[::-1] + b[::-1] + c[::-1])
-
-answer = sorted(answer)
+#완전탐색
+for i in range(1, len(words)-1):
+    for j in range(i+1, len(words)):
+        answer.append(words[:i][::-1] + words[i:j][::-1] + words[j:][::-1]) #뒤집어 넣기
+            
+answer = sorted(answer) #사전순
 
 print(answer[0])
